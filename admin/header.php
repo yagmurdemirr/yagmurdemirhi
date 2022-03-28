@@ -36,7 +36,7 @@ require_once('baglan.php');
                     <ul class="p-0">
                         <li><a href="dashboard.php">Başlangıç</a></li>
                         <li><a href="sayfalar.php">Sayfalar</a></li>
-                        <li><a href="yazılar.php">Yazılar</a></li>
+                        <li><a href="yazilar.php">Yazılar</a></li>
                         <li><a href="yorumlar.php">Yorumlar</a></li>
                         <li><a href="kategoriler.php">Kategoriler</a></li>
                         <li><a href="mesajlar.php">Mesajlar</a></li>
