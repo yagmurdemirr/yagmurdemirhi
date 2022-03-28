@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 26 Mar 2022, 11:11:47
+-- Üretim Zamanı: 28 Mar 2022, 13:34:49
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.0.15
 
@@ -40,10 +40,11 @@ CREATE TABLE `kategoriler` (
 --
 
 INSERT INTO `kategoriler` (`id`, `kategori`, `katturu`, `ustkat`, `meta`) VALUES
-(2, 'Web Tasarım', 'Ana Kategori', '-', 'Web Tasarım ve Bilgileri'),
-(3, 'Grafik Tasarım', 'Ana Kategori', '-', 'Grafik Tasarım'),
-(4, 'Dijital Pazarlama', 'Ana Kategori', '-', 'Dijital Pazarlama'),
-(5, 'Web', 'Alt Kategori', 'Grafik Tasarım', 'aaa');
+(12, 'Web Tasarım', 'Ana Kategori', '-', 'Web Tasarım Üzerine Verilen Hizmetlerdir.'),
+(13, 'Grafik Tasarım', 'Ana Kategori', '-', 'Grafik Tasarım Üzerine Verilen Hizmetlerdir.'),
+(14, 'Dijital Pazarlama', 'Ana Kategori', '-', 'Dijital Pazarlama Üzerine Verilen Hizmetlerdir.'),
+(15, 'Web', 'Alt Kategori', 'Web Tasarım', 'Web Tasarımın alt kategorisidir.'),
+(18, 'sdfsg', 'Ana Kategori', '-', 'www');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,7 @@ ALTER TABLE `ornek`
 -- Tablo için AUTO_INCREMENT değeri `kategoriler`
 --
 ALTER TABLE `kategoriler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `ornek`
