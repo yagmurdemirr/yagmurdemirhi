@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 29 Mar 2022, 13:40:19
+-- Üretim Zamanı: 29 Mar 2022, 14:36:01
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.0.15
 
@@ -87,6 +87,13 @@ CREATE TABLE `yazilar` (
   `tarih` varchar(11) NOT NULL,
   `durum` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `yazilar`
+--
+
+INSERT INTO `yazilar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `kategori`, `tarih`, `durum`) VALUES
+(0, 'Lorem Ipsum Dolar Sıt', ' Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit', 'Lorem ipsum dolor sit amet consectetur adipisicing elit', '../img/dijital-pazarlama-hizmeti-330x150px.jpg', 'wwwwww', 'Dijital Pazarlama', '2022-03-22', 'Yayınlandı');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
