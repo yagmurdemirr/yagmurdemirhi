@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Mar 2022, 13:34:49
+-- Üretim Zamanı: 29 Mar 2022, 13:40:19
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.0.15
 
@@ -69,6 +69,24 @@ INSERT INTO `ornek` (`id`, `ad`, `yas`, `il`) VALUES
 (3, 'Ahmet', 82, 'Zıbilistan'),
 (4, 'Hayko', 50, 'Sinop'),
 (5, 'Ayşe', 20, 'Kayseri');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `yazilar`
+--
+
+CREATE TABLE `yazilar` (
+  `id` int(11) NOT NULL,
+  `baslik` varchar(100) NOT NULL,
+  `icerik` text NOT NULL,
+  `meta` varchar(160) NOT NULL,
+  `foto` varchar(150) NOT NULL,
+  `fotoalt` varchar(100) NOT NULL,
+  `kategori` varchar(25) NOT NULL,
+  `tarih` varchar(11) NOT NULL,
+  `durum` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dökümü yapılmış tablolar için indeksler
