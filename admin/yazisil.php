@@ -16,3 +16,4 @@ if($sorgu_yazisil -> rowCount){
 
 require_once('footer.php'); ?>
 
+
