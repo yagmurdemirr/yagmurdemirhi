@@ -16,6 +16,9 @@
                 </div>
                 <div class="form-group">
                     <textarea name="icerik" rows="7" class="form-control" placeholder="Yazı İçeriğini Girin"></textarea>
+                    <script>
+                        CKEDITOR.replace('icerik');
+                    </script>
                 </div>
                 <div class="form-group">
                     <input type="text" name="meta" class="form-control" placeholder="Meta açıklaması Girin (Max. 160 Karakter)">
@@ -79,13 +82,13 @@
                     $durum = $_POST['durum'];
 
                     if (move_uploaded_file($_FILES['foto']['tmp_name'], $yuklenecekfoto)) {
-                        $sorgu_kaydet = $db -> prepare('insert into yazilar(baslik,icerik,meta,foto,fotoalt,kategori,tarih,durum) values(?,?,?,?,?,?,?,?)');
-                        $sorgu_kaydet -> execute(array($baslik, $icerik, $meta, $yuklenecekfoto, $fotoalt, $kategori, $tarih, $durum));
+                        $sorgu_kaydet = $db->prepare('insert into yazilar(baslik,icerik,meta,foto,fotoalt,kategori,tarih,durum) values(?,?,?,?,?,?,?,?)');
+                        $sorgu_kaydet->execute(array($baslik, $icerik, $meta, $yuklenecekfoto, $fotoalt, $kategori, $tarih, $durum));
 
 
                         if ($sorgu_kaydet->rowCount()) {
-                        echo '<div class = "alert alert-success">Kayıt İşlemi Başarılı</div> <meta http-equiv="refresh" content="2; url=yazilar.php">';
-                        }else{
+                            echo '<div class = "alert alert-success">Kayıt İşlemi Başarılı</div> <meta http-equiv="refresh" content="2; url=yazilar.php">';
+                        } else {
                             echo '<div class = "alert alert-danger">Hata Oluştu</div>';
                         }
                     }
@@ -101,3 +104,4 @@
 <!-- Yazi Ekle Section End -->
 
 <?php require_once('footer.php'); ?>
+

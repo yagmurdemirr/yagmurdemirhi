@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset ($_SESSION['kadi'])){
+if (!isset($_SESSION['kadi'])) {
     die('Giriş Yetkiniz Yoktur');
 }
 
@@ -23,7 +23,10 @@ require_once('baglan.php');
     <!-- Style Css -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Document</title>
+    <title>Başlık</title>
+
+    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+
 </head>
 
 <body>
