@@ -46,7 +46,7 @@
                                     <td> <?php echo $satir_yazilar['tarih'];?> </td>
                                     <td> <?php echo $satir_yazilar['durum']; ?></td>
                                     <td><a href=""><button class="btn btn-warning">Düzenle</button></a></td>
-                                    <td><a href=""><button class="btn btn-danger">Sil</button></a></td>
+                                    <td><a href="yazisil.php?id=<?php echo $satir_yazilar['id']; ?>"><button class="btn btn-danger">Sil</button></a></td>
                                 </tr>
 
                         <?php
