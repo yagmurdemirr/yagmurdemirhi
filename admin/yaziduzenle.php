@@ -75,28 +75,32 @@ $satir_duzenle = $sorgu_duzenle->fetch();
                 <?php
 
                 if ($_POST) {
+
                     $baslik = $_POST['baslik'];
                     $icerik = $_POST['icerik'];
                     $meta = $_POST['meta'];
-                    $dizin= "../img/";
-                    $yuklenecekfoto = $dizin.$_FILES['foto']['name'];
+                    $dizin = "../img/";
+                    $yuklenecekfoto = $dizin . $_FILES['foto']['name'];
                     $fotoalt = $_POST['fotoalt'];
                     $kategori = $_POST['kategori'];
                     $tarih = $_POST['tarih'];
                     $durum = $_POST['durum'];
 
-                    if(move_uploaded_file($_FILES['foto']['tmp_name'],$yuklenecekfoto)){
-                        $sorgu_guncelle = $db -> prepare('update yazilar set baslik=?, icerik=?, meta=?, foto=?, fotoalt=?, kategori=?, tarih=?, durum=? where id=?');
-                        $sorgu_guncelle -> execute(array($baslik,$icerik,$meta,$yuklenecekfoto,$fotoalt,$kategori,$tarih,$durum,$id));
+                    if (move_uploaded_file($_FILES['foto']['tmp_name'], $yuklenecekfoto)) {
 
-                        if($sorgu_guncelle -> rowCount()){
-                            echo '<div class="alert alert-success">Kayıt Güncellendi</div><meta http-equiv="refresh" content="2; url=yazilar.php">';
+                        $sorgu_duzenle = $db->prepare('update yazilar set baslik=?, icerik=?, meta=?, foto=?, fotoalt=?, kategori=?, tarih=?, durum=? ');
+                        $sorgu_duzenle->execute(array($baslik, $icerik, $meta, $yuklenecekfoto, $fotoalt, $kategori, $tarih, $durum));
+
+                        if ($sorgu_duzenle->rowCount()) {
+                            echo '<div class="alert alert-success">Kayıt Güncellendi</div> <meta http-equiv="refresh" content="0; url=yazilar.php">';
                         } else {
                             echo '<div class="alert alert-danger">Hata Oluştu</div>';
                         }
                     }
                 }
+
                 ?>
+
             </div>
         </form>
     </div>
@@ -104,4 +108,3 @@ $satir_duzenle = $sorgu_duzenle->fetch();
 <!-- Yazı Ekle Section End -->
 
 <?php require_once('footer.php'); ?>
-
