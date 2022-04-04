@@ -34,7 +34,7 @@
                                     <td><?php echo $satir_sayfalar['baslik']; ?></td>
                                     <td><?php echo $satir_sayfalar['seotitle']; ?></td>
                                     <td><?php echo $satir_sayfalar['durum']; ?></td>
-                                    <td></td>
+                                    <td><?php echo $satir_sayfalar['sayfaturu']; ?></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
