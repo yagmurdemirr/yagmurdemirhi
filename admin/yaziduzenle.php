@@ -88,10 +88,10 @@ $satir_duzenle = $sorgu_duzenle->fetch();
 
                     if (move_uploaded_file($_FILES['foto']['tmp_name'], $yuklenecekfoto)) {
 
-                        $sorgu_duzenle = $db->prepare('update yazilar set baslik=?, icerik=?, meta=?, foto=?, fotoalt=?, kategori=?, tarih=?, durum=? ');
-                        $sorgu_duzenle->execute(array($baslik, $icerik, $meta, $yuklenecekfoto, $fotoalt, $kategori, $tarih, $durum));
+                        $sorgu_guncelle = $db->prepare('update yazilar set baslik=?, icerik=?, meta=?, foto=?, fotoalt=?, kategori=?, tarih=?, durum=? where id=?');
+                        $sorgu_guncelle->execute(array($baslik, $icerik, $meta, $yuklenecekfoto, $fotoalt, $kategori, $tarih, $durum, $id));
 
-                        if ($sorgu_duzenle->rowCount()) {
+                        if ($sorgu_guncelle->rowCount()) {
                             echo '<div class="alert alert-success">Kayıt Güncellendi</div> <meta http-equiv="refresh" content="0; url=yazilar.php">';
                         } else {
                             echo '<div class="alert alert-danger">Hata Oluştu</div>';
