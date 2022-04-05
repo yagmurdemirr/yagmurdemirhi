@@ -16,6 +16,8 @@
                             <th>Sayfa Başlığı</th>
                             <th>Durum</th>
                             <th>Sayfa Türü</th>
+                            <th>Düzenle</th>
+                            <th>Sil</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,13 +32,13 @@
                         ?>
 
                                 <tr>
-                                    <td><img src="<?php echo $satir_sayfalar['foto']; ?>"></td>
-                                    <td><?php echo $satir_sayfalar['baslik']; ?></td>
-                                    <td><?php echo $satir_sayfalar['seotitle']; ?></td>
-                                    <td><?php echo $satir_sayfalar['durum']; ?></td>
-                                    <td><?php echo $satir_sayfalar['sayfaturu']; ?></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="w-25"><img class="img-fluid" src="<?php echo $satir_sayfalar['foto']; ?>"></td>
+                                    <td style="vertical-align:middle"><?php echo $satir_sayfalar['baslik']; ?></td>
+                                    <td style="vertical-align:middle"><?php echo $satir_sayfalar['seotitle']; ?></td>
+                                    <td style="vertical-align:middle"><?php echo $satir_sayfalar['durum']; ?></td>
+                                    <td style="vertical-align:middle"><?php echo $satir_sayfalar['sayfaturu']; ?></td>
+                                    <td style="vertical-align:middle"><a href=""><button class="btn btn-warning">Düzenle</button></a></td>
+                                    <td style="vertical-align:middle"><a href="sayfasil.php?id= <?php echo $satir_sayfalar['id']; ?>"><button class="btn btn-danger">Sil</button></a></td>
                                 </tr>
 
                         <?php
