@@ -37,7 +37,7 @@
                                     <td style="vertical-align:middle"><?php echo $satir_sayfalar['seotitle']; ?></td>
                                     <td style="vertical-align:middle"><?php echo $satir_sayfalar['durum']; ?></td>
                                     <td style="vertical-align:middle"><?php echo $satir_sayfalar['sayfaturu']; ?></td>
-                                    <td style="vertical-align:middle"><a href=""><button class="btn btn-warning">Düzenle</button></a></td>
+                                    <td style="vertical-align:middle"><a href="sayfaduzenle.php?id= <?php echo $satir_sayfalar['id']; ?>"><button class="btn btn-warning">Düzenle</button></a></td>
                                     <td style="vertical-align:middle"><a href="sayfasil.php?id= <?php echo $satir_sayfalar['id']; ?>"><button class="btn btn-danger">Sil</button></a></td>
                                 </tr>
 
