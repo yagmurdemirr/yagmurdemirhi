@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 06 Nis 2022, 09:34:04
+-- Üretim Zamanı: 06 Nis 2022, 13:01:23
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.0.15
 
@@ -20,6 +20,39 @@ SET time_zone = "+00:00";
 --
 -- Veritabanı: `aribilgi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `ayarlar`
+--
+
+CREATE TABLE `ayarlar` (
+  `id` int(11) NOT NULL,
+  `adres` varchar(100) NOT NULL,
+  `telefon` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `harita` text NOT NULL,
+  `tanitim` text NOT NULL,
+  `logo` varchar(100) NOT NULL,
+  `blogbanner` varchar(100) NOT NULL,
+  `iletisimbanner` varchar(100) NOT NULL,
+  `facebook` varchar(50) NOT NULL,
+  `instagram` varchar(50) NOT NULL,
+  `twitter` varchar(50) NOT NULL,
+  `whatsapp` varchar(100) NOT NULL,
+  `analitik` text NOT NULL,
+  `konsol` text NOT NULL,
+  `piksel` text NOT NULL,
+  `copy` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `ayarlar`
+--
+
+INSERT INTO `ayarlar` (`id`, `adres`, `telefon`, `email`, `harita`, `tanitim`, `logo`, `blogbanner`, `iletisimbanner`, `facebook`, `instagram`, `twitter`, `whatsapp`, `analitik`, `konsol`, `piksel`, `copy`) VALUES
+(1, 'Lorem Ipsum Sit Dolor Amet', '05555555555', 'info@mail.com', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.267497942886!2d28.7057210151909!3d40.9975179793018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa0f771049369%3A0xcef79a22d014d5ca!2sARI%20Bili%C5%9Fim%20-%20Bilgisayar%20Al%C4%B1m%20%26%20Sat%C4%B1m%20ve%20Teknik%20Servis%20Hizmetleri!5e0!3m2!1str!2str!4v1649241463496!5m2!1str!2str\" width=\"250\" height=\"250\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi distinctio fugiat, aliquid, repellat sapiente dolorem facilis voluptatem ex animi ad recusandae iusto dignissimos alias labore excepturi perferendis quos est rerum?', '../img/cropped-logo-200x37-1.webp', '../img/blogbanner.jpg', '../img/iletisimbanner.jpg', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://wa.me/0555555555', 'dvgdzgdfhbgfdhbfdhbdhzh', 'hdfzdfhhdgdaggrg', 'agrgaggghjdjjnncskhnbkns', 'Her Hakkı Saklıdır &copy; 2022 Arı Bilişim');
 
 -- --------------------------------------------------------
 
@@ -130,6 +163,12 @@ INSERT INTO `yazilar` (`id`, `baslik`, `icerik`, `meta`, `foto`, `fotoalt`, `kat
 --
 
 --
+-- Tablo için indeksler `ayarlar`
+--
+ALTER TABLE `ayarlar`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `kategoriler`
 --
 ALTER TABLE `kategoriler`
@@ -150,6 +189,12 @@ ALTER TABLE `sayfalar`
 --
 -- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
+
+--
+-- Tablo için AUTO_INCREMENT değeri `ayarlar`
+--
+ALTER TABLE `ayarlar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kategoriler`
