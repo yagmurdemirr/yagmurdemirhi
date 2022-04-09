@@ -2,13 +2,15 @@
 
 require_once('header.php'); 
 
-
+$sorgu_iletisim = $db -> prepare('select *form ayarlar order by id desc limit 1');
+$sorgu_iletisim -> execute();
+$satir_iletisim = $sorgu_iletisim -> fetch();
 
 ?>
 
 <!-- İletisim Banner Section Start -->
 
-<section id="iletisimBanner" class="py-5" style="background-image: ;">
+<section id="iletisimBanner" class="py-5" style="background-image: <?php echo $satir_iletisim['iletisimbanner']; ?> ;">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
