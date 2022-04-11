@@ -29,19 +29,19 @@ $satir_iletisim = $sorgu_iletisim->fetch();
     <div class="container">
         <div class="row">
             <div class="col-md-4 text-center">
-            <i class="bi bi-geo mor"></i> <br>
-            <strong>Adres</strong> <br>
-            <?php echo $satir_iletisim['adres']; ?>
+                <i class="bi bi-geo mor"></i> <br>
+                <strong>Adres</strong> <br>
+                <?php echo $satir_iletisim['adres']; ?>
             </div>
             <div class="col-md-4 text-center">
-            <i class="bi bi-telephone mor"></i> <br>
-            <strong>Telefon</strong> <br>
-            <a class="text-decoration-none text-dark" href="tel:<?php echo $satir_iletisim['telefon']; ?>"><?php echo $satir_iletisim['telefon']; ?></a>
+                <i class="bi bi-telephone mor"></i> <br>
+                <strong>Telefon</strong> <br>
+                <a class="text-decoration-none text-dark" href="tel:<?php echo $satir_iletisim['telefon']; ?>"><?php echo $satir_iletisim['telefon']; ?></a>
             </div>
             <div class="col-md-4 text-center">
-            <i class="bi bi-envelope mor"></i> <br>
-            <strong>E-Posta</strong> <br>
-            <a class="text-decoration-none text-dark" href="mailto: <?php echo $satir_iletisim['email']; ?>"><?php echo $satir_iletisim['email']; ?></a>
+                <i class="bi bi-envelope mor"></i> <br>
+                <strong>E-Posta</strong> <br>
+                <a class="text-decoration-none text-dark" href="mailto: <?php echo $satir_iletisim['email']; ?>"><?php echo $satir_iletisim['email']; ?></a>
             </div>
         </div>
     </div>
@@ -83,6 +83,27 @@ $satir_iletisim = $sorgu_iletisim->fetch();
                         <button type="submit" class="btn btn-mor w-100">Gönder</button>
                     </div>
                 </form>
+                <?php
+
+                if ($_POST) {
+
+                    $ad = $_POST['ad'];
+                    $email = $_POST['email'];
+                    $konu = $_POST['konu'];
+                    $mesaj = $_POST['mesaj'];
+                    $durum = "Okunmadı";
+
+                    $sorgu_mesajlar = $db->prepare('insert into mesajlar(ad,email,konu,mesaj,durum) values(?,?,?,?,?)');
+                    $sorgu_mesajlar->execute(array($ad, $email, $konu, $mesaj, $durum));
+
+                    if ($sorgu_mesajlar->rowCount()) {
+                        echo '<div class="alert alert-success">Mesajınız İletilmiştir. Tarafınıza En Kısa Sürede Geri Dönüş Sağlanıcaktır.</div>';
+                    }else{
+                        echo '<div class="alert alert-danger">Hata OLuştu, Lütfen Tekrar Deneyin.</div>';
+                    }
+                }
+
+                ?>
             </div>
             <div class="col-md-6 text-center">
                 <?php echo $satir_iletisim['harita']; ?>
