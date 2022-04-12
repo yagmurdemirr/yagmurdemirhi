@@ -97,7 +97,7 @@ $satir_iletisim = $sorgu_iletisim->fetch();
                     $sorgu_mesajlar->execute(array($ad, $email, $konu, $mesaj, $durum));
 
                     if ($sorgu_mesajlar->rowCount()) {
-                        echo '<div class="alert alert-success">Mesajınız İletilmiştir. Tarafınıza En Kısa Sürede Geri Dönüş Sağlanıcaktır.</div>';
+                        echo '<meta http-equiv="refresh" content="2; url=tesekkurler.php">';
                     }else{
                         echo '<div class="alert alert-danger">Hata OLuştu, Lütfen Tekrar Deneyin.</div>';
                     }
@@ -113,6 +113,8 @@ $satir_iletisim = $sorgu_iletisim->fetch();
 </section>
 
 <!-- Form Section End -->
+
+
 
 
 

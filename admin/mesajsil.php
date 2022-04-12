@@ -5,7 +5,10 @@ $sorgu_mesajsil = $db -> prepare('delete from mesajlar where id=?');
 $sorgu_mesajsil -> execute(array($id));
 
 if($sorgu_mesajsil -> rowCount()){
-    echo '<div class="alert alert-success">Mesajınız Silinmiştir</div>';
+    echo '<div class="alert alert-success">Mesajınız Silinmiştir</div><meta http-equiv="refresh" content="2; url=mesajlar.php">';
+}else{
+    echo '<div class="alert alert-danger">Hata Oluştu</div><meta http-equiv="refresh" content="2; url=mesajlar.php">';
 }
 
 require_once('footer.php'); ?>
+
