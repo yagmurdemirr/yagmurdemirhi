@@ -33,6 +33,11 @@
     text-decoration: none;
 }
 
+#blogBanner a{
+    color: #fff;
+    text-decoration: none;
+}
+
 #info i{
     font-size: 40px;
 }
