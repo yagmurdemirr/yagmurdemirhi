@@ -64,12 +64,12 @@ $satir_banner = $sorgu_banner->fetch();
             ?>
                     <div class="col-md-4 mt-4">
                         <div class="card shadow">
-                            <a href="sample.php?=<?php echo $satir_blogList['id']; ?>" class="text-dark text-decoration-none">
+                            <a href="sample.php?id=<?php echo $satir_blogList['id']; ?>" class="text-dark text-decoration-none">
                                 <img src="<?php echo substr($satir_blogList['foto'],3); ?>" alt="<?php echo $satir_blogList['fotoalt']; ?>" class="card-img-top">
                             </a>
 
                             <div class="card-body">
-                                <a href="sample.php?=<?php echo $satir_blogList['id']; ?>" class="text-dark text-decoration-none">
+                                <a href="sample.php?id=<?php echo $satir_blogList['id']; ?>" class="text-dark text-decoration-none">
                                     <h2 style="font-size:16px;"><?php echo $satir_blogList['baslik']; ?></h2>
                                 </a>
                                 <small>Yayınlanma Tarihi: <?php echo $satir_blogList['tarih']; ?></small>
