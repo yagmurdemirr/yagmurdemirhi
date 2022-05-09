@@ -50,3 +50,7 @@
     background-color: #6c55f9;
     color: #fff;
 }
+
+.smallyazi p{
+    line-height: 16px !important;
+}
