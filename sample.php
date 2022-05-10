@@ -32,10 +32,30 @@ $baslik = $satir_makale['baslik'];
             <div class="col-md-9">
                 <img src="<?php echo substr($satir_makale['foto'], 3); ?>" alt="<?php echo $satir_makale['fotoalt']; ?>" class="w-100 mb-3">
                 <h1><?php echo $satir_makale['baslik']; ?></h1>
-                <small>Yayınlanma Tarihi: <?php echo $satir_makale['tarih']; ?> - Kategori: <a href=""><?php echo $satir_makale['kategori']; ?></a> </small> <br>
+                <small>Yayınlanma Tarihi: <?php echo $satir_makale['tarih']; ?> - Kategori: <a href="kategoripage.php?kategori=<?php echo $satir_makale['kategori']; ?>"><?php echo $satir_makale['kategori']; ?></a> </small> <br>
 
                 <?php echo $satir_makale['icerik']; ?>
+                <hr>
 
+                <h5>Yorumlar</h5>
+                <?php
+                $sorgu_yorumlar = $db->prepare('select *from yorumlar where durum="onaylandı" order by id desc');
+                $sorgu_yorumlar->execute();
+
+                if ($sorgu_yorumlar->rowCount()) {
+                    foreach ($sorgu_yorumlar as $satir_yorumlar) {
+                        if ($satir_yorumlar['baslik'] == $satir_makale['baslik']) {
+                ?>
+                            <strong><?php echo $satir_yorumlar['adiniz'] . ' ' . $satir_yorumlar['soyadiniz'] ?></strong> <br>
+                            <p><?php echo $satir_yorumlar['yorum']; ?></p>
+                <?php
+                        }
+                    }
+                }
+
+                ?>
+
+                <hr>
                 <h5 class="mt-5">Yorum Yapın</h5>
                 <form method="post" class="form-row">
                     <div class="col-md-6">
@@ -75,14 +95,13 @@ $baslik = $satir_makale['baslik'];
                     $durum = "onaylanmadı";
 
                     $sorgu_yorumkaydet = $db->prepare('insert into yorumlar(adiniz,soyadiniz,email,yorum,baslik,durum) values(?,?,?,?,?,?)');
-                    $sorgu_yorumkaydet->execute(array($adiniz, $soyadiniz, $email, $yorum, $baslik,$durum));
+                    $sorgu_yorumkaydet->execute(array($adiniz, $soyadiniz, $email, $yorum, $baslik, $durum));
 
                     if ($sorgu_yorumkaydet->rowCount()) {
                         echo '<div class="alert alert-success">Yorumunuz Admin Onayına Gönderildi</div>';
-                    }else{
+                    } else {
                         echo '<div class="alert alert-danger">Hata Oluştu, Lütfen Tekrar Deneyin</div>';
                     }
-
                 }
 
                 ?>
