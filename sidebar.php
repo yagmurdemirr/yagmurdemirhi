@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-2">
+    <div class="row mt-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -52,7 +52,7 @@
                     if ($sorgu_yazilar->rowCount()) {
                         foreach ($sorgu_yazilar as $satir_yazilar) {
                     ?>
-                            <div class="row">
+                            <div class="row mt-2">
                                 <div class="col-md-6">
                                     <a href="sample.php?id=<?php echo $satir_yazilar['id']; ?>"><img src="<?php echo substr($satir_yazilar['foto'], 3); ?>" alt="<?php echo $satir_yazilar['fotoalt']; ?>" class="img-fluid"></a>
                                 </div>
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3 sosmed">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -77,11 +77,15 @@
                     <?php
                     $sorgu_sosmed = $db->prepare('select *from ayarlar');
                     $sorgu_sosmed->execute();
-                    $satir_sosmed = $sorgu_sosmed->fetch;
-                    
+                    $satir_sosmed = $sorgu_sosmed->fetch();
+
                     if ($sorgu_sosmed->rowCount()) {
                     ?>
                         <a href="<?php echo $satir_sosmed['facebook']; ?>"><i class="bi bi-facebook"></i></a>
+                        <a href="<?php echo $satir_sosmed['instagram']; ?>"><i class="bi bi-instagram"></i></a>
+                        <a href="<?php echo $satir_sosmed['twitter']; ?>"><i class="bi bi-twitter"></i></a>
+                        <a href="<?php echo $satir_sosmed['whatsapp']; ?>"><i class="bi bi-whatsapp"></i></a>
+
                     <?php
                     }
                     ?>
