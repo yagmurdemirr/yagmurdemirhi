@@ -81,10 +81,7 @@
                     
                     if ($sorgu_sosmed->rowCount()) {
                     ?>
-
                         <a href="<?php echo $satir_sosmed['facebook']; ?>"><i class="bi bi-facebook"></i></a>
-
-
                     <?php
                     }
                     ?>
