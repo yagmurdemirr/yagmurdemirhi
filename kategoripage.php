@@ -5,7 +5,6 @@ $kat_list = $db->prepare('select * from yazilar where kategori=? order by id des
 $kat_list->execute(array($kategori));
 
 
-
 ?>
 
 <!-- Kategori Banner Section Start -->

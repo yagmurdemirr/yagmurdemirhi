@@ -32,9 +32,7 @@ require_once('baglan.php');
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -46,12 +44,25 @@ require_once('baglan.php');
                                     <a class="nav-link" href="hakkimda.php">Hakkımda</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                                        role="button" data-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                                         Hizmetlerim
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Web Tasarım Hizmeti</a>
+
+                                        <?php
+
+                                        $sorgu_altmenu = $db->prepare('select * from sayfalar where sayfaturu="Alt Sayfa" order by baslik asc');
+                                        $sorgu_altmenu->execute();
+
+                                        if ($sorgu_altmenu->rowCount()) {
+                                            foreach ($sorgu_altmenu as $satir_altmenu) {
+                                        ?>
+                                                <a class="dropdown-item" href="sample.php?id=<?php echo $satir_altmenu['id']; ?>"><?php echo $satir_altmenu['baslik']; ?></a>
+                                        <?php
+                                            }
+                                        }
+
+                                        ?>
                                         <a class="dropdown-item" href="#">Grafik Tasarım Hizmeti</a>
                                         <a class="dropdown-item" href="#">Dijital Pazarlama Hizmeti</a>
                                     </div>
