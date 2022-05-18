@@ -24,7 +24,7 @@
                     <h3 class="mor">Kategoriler</h3>
                     <?php
 
-                    $sorgu_katlist = $db->prepare('select *from kategoriler order by kategori asc');
+                    $sorgu_katlist = $db->prepare('select * from kategoriler order by kategori asc');
                     $sorgu_katlist->execute();
 
                     if ($sorgu_katlist->rowCount()) {
@@ -44,9 +44,9 @@
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
-                    <h3 class="mor">Yazılar</h3>
+                    <h3 class="mor">Son Yazılar</h3>
                     <?php
-                    $sorgu_yazilar = $db->prepare('select *from yazilar order by id desc limit 5');
+                    $sorgu_yazilar = $db->prepare('select * from yazilar order by id desc limit 5');
                     $sorgu_yazilar->execute();
 
                     if ($sorgu_yazilar->rowCount()) {
@@ -75,16 +75,16 @@
                 <div class="card-body">
                     <h3 class="mor">Bizi Takip Edin.</h3>
                     <?php
-                    $sorgu_sosmed = $db->prepare('select *from ayarlar');
+                    $sorgu_sosmed = $db->prepare('select * from ayarlar');
                     $sorgu_sosmed->execute();
                     $satir_sosmed = $sorgu_sosmed->fetch();
 
                     if ($sorgu_sosmed->rowCount()) {
                     ?>
-                        <a href="<?php echo $satir_sosmed['facebook']; ?>"><i class="bi bi-facebook"></i></a>
-                        <a href="<?php echo $satir_sosmed['instagram']; ?>"><i class="bi bi-instagram"></i></a>
-                        <a href="<?php echo $satir_sosmed['twitter']; ?>"><i class="bi bi-twitter"></i></a>
-                        <a href="<?php echo $satir_sosmed['whatsapp']; ?>"><i class="bi bi-whatsapp"></i></a>
+                        <a href="<?php echo $satir_sosmed['facebook']; ?>" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="<?php echo $satir_sosmed['instagram']; ?>" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="<?php echo $satir_sosmed['twitter']; ?>" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="<?php echo $satir_sosmed['whatsapp']; ?>" target="_blank"><i class="bi bi-whatsapp"></i></a>
 
                     <?php
                     }
