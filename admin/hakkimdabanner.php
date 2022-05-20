@@ -51,9 +51,103 @@
                 </div>
             </div>
         </form>
+        <?php
+
+        if ($_POST) {
+
+            $dizin = "../img/";
+            $yuklenecekfoto = $dizin . $_FILES['foto']['name'];
+
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $yuklenecekfoto)) {
+                $hakkimdaBanner = $db->prepare('insert into hakkimdabanner(foto,baslik,konum,tekrar,size) values(?,?,?,?,?)');
+                $hakkimdaBanner->execute(array($yuklenecekfoto, $_POST['baslik'], $_POST['konum'], $_POST['tekrar'], $_POST['size']));
+
+                if ($hakkimdaBanner->rowCount()) {
+                    echo '<div class="alert alert-success">Kayıt Başarılı</div><meta http-equiv="refresh" content="1; url=hakkimdabanner.php">';
+                } else {
+                    echo '<div class="alert alert-danger">Hata Oluştu</div>';
+                }
+            }
+        }
+
+        ?>
     </div>
 </section>
 
 <!-- Hakkımda Bnaner Section End -->
+
+<!-- Yayındaki Banner Section Start -->
+
+<section id="yayindakiBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>görsel</th>
+                            <th>baslik</th>
+                            <th>banner konum</th>
+                            <th>banner tekrarı</th>
+                            <th>banner ölçü</th>
+                            <th>düzenle</th>
+                            <th>sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+
+                        $sorgu_hakkimdabanner = $db->prepare('select * from hakkimdabanner order by id desc limit 1');
+                        $sorgu_hakkimdabanner->execute();
+
+                        if ($sorgu_hakkimdabanner->rowCount()) {
+                            foreach ($sorgu_hakkimdabanner as $satir_hakkimdabanner) {
+                        ?>
+                                <tr>
+                                    <td><?php echo $satir_hakkimdabanner['id']; ?></td>
+                                    <td><img src="<?php echo $satir_hakkimdabanner['foto']; ?>" class="w-75"></td>
+                                    <td><?php echo $satir_hakkimdabanner['baslik']; ?></td>
+                                    <td>
+
+                                        <?php
+
+                                        $konum = $satir_hakkimdabanner['konum'];
+
+                                        switch ($konum) {
+                                            case 'background-position:center center;':
+                                                echo 'Merkez';
+                                                break;
+                                            case 'background-position:top center;':
+                                                echo 'Merkez';
+                                                break;
+                                            case 'background-position:bottom center;':
+                                                echo 'Merkez';
+                                                break;
+                                        }
+
+                                        ?>
+
+
+
+                                    </td>
+                                    <td><?php echo $satir_hakkimdabanner['tekrar']; ?></td>
+                                    <td><?php echo $satir_hakkimdabanner['size']; ?></td>
+                                    <td>düzenle</td>
+                                    <td>sil</td>
+                                </tr>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Yayındaki Banner Section End -->
 
 <?php require_once('footer.php'); ?>
