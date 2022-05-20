@@ -3,7 +3,7 @@
 require_once('header.php'); 
 
 $id = $_GET['id'];
-$sorgu_hizmet = $db -> prepare('select * from sayfalar where =?');
+$sorgu_hizmet = $db -> prepare('select * from sayfalar where id=?');
 $sorgu_hizmet -> execute(array($id));
 $satir_hizmet = $sorgu_hizmet->fetch();
 

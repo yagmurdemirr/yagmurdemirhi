@@ -63,8 +63,6 @@ require_once('baglan.php');
                                         }
 
                                         ?>
-                                        <a class="dropdown-item" href="#">Grafik Tasarım Hizmeti</a>
-                                        <a class="dropdown-item" href="#">Dijital Pazarlama Hizmeti</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">

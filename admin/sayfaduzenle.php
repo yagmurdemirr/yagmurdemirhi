@@ -5,7 +5,7 @@ require_once('header.php');
 $id = $_GET['id'];
 $sorgu_sayfaduzenle = $db -> prepare('select * from sayfalar where id=?');
 $sorgu_sayfaduzenle -> execute(array($id));
-$satir_sayfaduzenle = $sorgu_duzenle-> fetch();
+$satir_sayfaduzenle = $sorgu_sayfaduzenle-> fetch();
 
 ?>
 

@@ -43,9 +43,9 @@ require_once('baglan.php');
                                 Ana Sayfa
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item text-dark" href="#">Action</a>
+                                <a class="dropdown-item text-dark" href="#">Another action</a>
+                                <a class="dropdown-item text-dark" href="#">Something else here</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -53,9 +53,9 @@ require_once('baglan.php');
                                 Hakkımda
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="hakkimdabanner.php">Banner Ayarları</a>
-                                <a class="dropdown-item" href="hakkimdaicerik.php">İçerik Ayarları</a>
-                                <a class="dropdown-item" href="hakkimdanitelik.php">Nitelik Ayarları</a>
+                                <a class="dropdown-item text-dark" href="hakkimdabanner.php">Banner Ayarları</a>
+                                <a class="dropdown-item text-dark" href="hakkimdaicerik.php">İçerik Ayarları</a>
+                                <a class="dropdown-item text-dark" href="hakkimdanitelik.php">Nitelik Ayarları</a>
                             </div>
                         </li>
                         <li><a href="sayfalar.php">Sayfalar</a></li>

@@ -39,7 +39,7 @@ $baslik = $satir_makale['baslik'];
 
                 <h5>Yorumlar</h5>
                 <?php
-                $sorgu_yorumlar = $db->prepare('select *from yorumlar where durum="onaylandı" order by id desc');
+                $sorgu_yorumlar = $db->prepare('select * from yorumlar where durum="onaylandı" order by id desc');
                 $sorgu_yorumlar->execute();
 
                 if ($sorgu_yorumlar->rowCount()) {

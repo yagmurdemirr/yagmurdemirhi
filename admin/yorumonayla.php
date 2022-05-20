@@ -2,7 +2,7 @@
 
 require_once('header.php');
 $id = $_GET['id'];
-$sorgu_durum = $db->prepare('select *from yorumlar where id=?');
+$sorgu_durum = $db->prepare('select * from yorumlar where id=?');
 $sorgu_durum->execute(array($id));
 $satir_durum = $sorgu_durum->fetch();
 
