@@ -120,10 +120,10 @@
                                                 echo 'Merkez';
                                                 break;
                                             case 'background-position:top center;':
-                                                echo 'Merkez';
+                                                echo 'Üst';
                                                 break;
                                             case 'background-position:bottom center;':
-                                                echo 'Merkez';
+                                                echo 'Alt';
                                                 break;
                                         }
 
